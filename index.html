@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Bookshop</title>
+  </head>
+  <body>
+    <!-- Display start-->
+    <div class="container">
+        <div class="display-wrapper">
+            <div class="name"></div>
+            <div class="bday"></div>
+            <div class="place"></div>
+        </div>
+        <button type="button" class="btn btn-primary add-button" data-action="add" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Book</button>
+        <div class="form-check">
+            <input class="form-check-input" value="title" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+            <label class="form-check-label" for="flexRadioDefault1">
+              Title
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" value="date" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+            <label class="form-check-label" for="flexRadioDefault2">
+                Date
+            </label>
+          </div>
+        <div class="book-list">
+            <ul class="book-list-container" book-list-container>
+                <template book-list-template>
+                    <li class="details">
+                        <img class="image" data-image width="150" height="150"/>
+                        <a class="title" data-title>email@gmail.com</a>
+                        <div class="publish-date" data-date>My name</div>
+                        <div class="button add-action" data-delete onclick="deleteBook(event)"><i class="fa fa-trash"></i></div>
+                        <div class="button add-action" data-action="edit" data-modify onclick="editBook(event)" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-edit"></i></div>
+                    </li>
+                </template>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form class="row g-3">
+                    <div class="col-auto">
+                      <label for="book" class="visually-hidden">Book</label>
+                      <input required class="form-control modal-book" type="text" placeholder="Default input" aria-label="default input example">
+                    </div>
+                    <div class="col-auto">
+                        <label for="year" class="visually-hidden">Year</label>
+                        <input required class="form-control modal-year" type="number" placeholder="Default input" aria-label="default input example">
+                      </div>
+                    <div class="col-auto">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary modal-action mb-3" onclick="acitonItem()" data-bs-dismiss="modal">Add book</button>
+            </div>
+        </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="core.js"></script>
+  </body>
+</html>
+

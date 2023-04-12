@@ -1,0 +1,50 @@
+.container{
+    margin: 0;
+    padding: 0.625em;
+}
+
+.display-wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+.add-button{
+    margin-block: 0.313em;
+}
+.book-list-container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2em;
+}
+.details{
+    display: flex;
+    border: 1px solid black;
+    padding: 0.625em;
+    align-items: center;
+}
+.title{
+    width: 40%;
+    text-align: center;
+    padding: 0.625em;
+    text-overflow: ellipsis;
+}
+.publish-date{
+    width: 10%
+}
+.add-action{
+    width: 5%;
+    cursor: pointer;
+}
+.add-action:hover{
+    color: red;
+}
+.toggle-group{
+    display: flex;
+}
+@media screen and (max-width: 767px)  {
+    .book-list-container{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 2em;
+    }
+}
